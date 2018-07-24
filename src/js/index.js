@@ -72,3 +72,5 @@ btnSendComment.addEventListener('click', (ev) => {
   let getComment = commentArea.value;
   printComment.innerHTML = getComment;
 });
+
+
