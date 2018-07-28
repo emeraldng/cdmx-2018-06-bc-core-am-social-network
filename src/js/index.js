@@ -88,6 +88,12 @@ const initApp = () => {
                         emailVerified: emailVerified,
                         phoneNumber: phoneNumber,
                         photoURL: photoURL,
+
+
+
+
+
+                        
                         uid: uid,
                         accessToken: accessToken,
                         providerData: providerData
