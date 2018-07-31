@@ -68,7 +68,6 @@ function eliminar(id) {
 
 // Editando Post de Usuario.
 
-
 function editar(id, postFromUser) {
   document.getElementById('commentArea').value = postFromUser;
   let botonEditar = document.getElementById('btnSendComment');

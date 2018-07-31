@@ -56,16 +56,13 @@ btnSignIn.addEventListener('click', (ev) => {
     let userPasswordValueSignIn = userPasswordSignIn.value;
     // Sign In Firebase Function
     firebase.auth().signInWithEmailAndPassword(userEmailValueSignIn, userPasswordValueSignIn).then(function(success) {
-        // Managing HTML view
-        signInAndUpContainer.style.display = 'none';
-        newsFeedContainer.style.display = 'block';
-        document.getElementById('userNickname').style.display = 'block';
-        success.location.assign = 'https://florenciasilva.github.io/cdmx-2018-06-bc-core-am-social-network/src/news-feed';
+        window.location.assign('../src/news-feed.html');
     }).catch(function(error) {
         let errorCode = error.code;
         let errorMessage = alert(error.message);
     });
     firebase.auth().signInWithEmailAndPassword(userEmailValueSignIn, userPasswordValueSignIn);
+<<<<<<< HEAD
 });
 /*
 const initApp = () => {
@@ -113,3 +110,6 @@ const initApp = () => {
     window.addEventListener('load', function() {
         initApp();
     });*/
+=======
+});
+>>>>>>> upstream/master
