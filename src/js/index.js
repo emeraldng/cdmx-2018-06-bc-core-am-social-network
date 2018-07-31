@@ -62,7 +62,6 @@ btnSignIn.addEventListener('click', (ev) => {
         let errorMessage = alert(error.message);
     });
     firebase.auth().signInWithEmailAndPassword(userEmailValueSignIn, userPasswordValueSignIn);
-<<<<<<< HEAD
 });
 /*
 const initApp = () => {
@@ -110,6 +109,3 @@ const initApp = () => {
     window.addEventListener('load', function() {
         initApp();
     });*/
-=======
-});
->>>>>>> upstream/master
