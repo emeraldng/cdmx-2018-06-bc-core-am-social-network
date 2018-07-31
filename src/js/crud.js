@@ -44,7 +44,11 @@ db.collection('publicaciones').onSnapshot((querySnapshot) => {
                                               <p>${doc.data().post}</p>
                                               <a class="waves-effect waves-light btn-small" onclick="eliminar('${doc.id}')">BORAR POST</a>
                                               <a class="waves-effect waves-light btn-small" onclick="editar('${doc.id}', '${doc.data().post}')">EDITAR POST</a>
-                                            </div>
+                                              
+                                              <a class="btn waves-effect waves-light color-change" id="clickButton">LIKE!</a><p><span 0 id="clickValue"></span></p>
+                                              
+                                            
+                                              </div>
 
                                           </div>
                                         </div>
@@ -88,3 +92,18 @@ function editar(id, postFromUser) {
       });
   };
 };
+
+
+var count =100;
+firebase.database().ref().on('value', function(snapShot) {
+  console.log(snapShot.val());
+  count = snapShot.val().clicks;
+  $("#clickValue").html(count)
+})
+
+$("#clickButton").on("click", function(){
+  count--;
+  firebase.database().ref().set({
+    clicks:count
+  });
+})
