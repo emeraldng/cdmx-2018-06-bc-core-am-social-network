@@ -20,7 +20,7 @@ const guardar = () => {
     .then(function(docRef) {
       console.log('Document written with ID: ', docRef.id);
       // Esto hace que la TextArea se reinicie una vez dado click en "SEND"
-      // document.getElementById("postFromUser").value = "";
+      document.getElementById("postFromUser").value = "";
     })
     .catch(function(error) {
       console.error('Error adding document: ', error);
