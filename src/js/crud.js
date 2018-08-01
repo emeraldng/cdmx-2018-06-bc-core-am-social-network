@@ -13,7 +13,7 @@ const db = firebase.firestore();
 const guardar = () => {
   // Declaramos una var que guarde el value del TextArea
   const postFromUser = document.getElementById('commentArea').value;
-
+  document.getElementById("postFromUser").value = "";
   db.collection('publicaciones').add({
     post: postFromUser
   })
