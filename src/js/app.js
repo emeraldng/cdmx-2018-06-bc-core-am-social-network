@@ -9,8 +9,32 @@ btnSignOut.addEventListener('click', (ev) => {
     firebase.auth().signOut();
 });
 
-// Send, Edit and Delete Comments
+// Enviar, Editar y Borrar comentarios.
 const db = firebase.firestore();
+
+//Declaramos una función global que va a guardar el texto ingresado por el usuario en FIREBASE.
+window.guardar = () => {
+    // Declaramos una var que guarde el value del TextArea
+    let postFromUser = document.getElementById('commentArea').value;
+    db.collection('publicaciones').add({
+            post: postFromUser,
+            date: Date(postFromUser),
+            count: 0
+        })
+        .then(function(docRef) {
+            console.log('Document written with ID: ', docRef.id);
+            // Esto hace que la TextArea se reinicie una vez dado click en "SEND"
+            //document.getElementById("postFromUser").value = "";
+        })
+        .catch(function(error) {
+            console.error('Error adding document: ', error);
+        });
+};
+
+
+
+
+
 const guardar = () => {
     // Declaramos una var que guarde el value del TextArea
     let postFromUser = document.getElementById('commentArea').value;
