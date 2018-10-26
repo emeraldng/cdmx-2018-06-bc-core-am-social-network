@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { DesayunoComponent } from './desayuno/desayuno.component';
 import { ComidaComponent } from './comida/comida.component';
 import { OrdenesComponent } from './ordenes/ordenes.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { OrdenesComponent } from './ordenes/ordenes.component';
   ],
   imports: [
     BrowserModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
